@@ -1,0 +1,40 @@
+
+<!-- Team Section -->
+    <section id="team" class="team section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title pb-4" data-aos="fade-up">
+        <h2>area utenti</h2>
+        <p><span>Lista degli</span> <span class="description-title"> Utenti</span></p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+<div class="d-flex flex-column align-items-center">
+          <div class="team-profile col-lg-6 col-md-12 mb-5" data-aos="fade-up" data-aos-delay="100" *ngFor="let utente of utenti">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="img/team/darckpic.jpg" class="img-fluid" alt="">
+                <div class="social flex-column" style="height: 60px;">
+                  <p><i class="bi bi-person-vcard"></i> {{utente.roles}}</p>
+                </div>
+              </div>
+              <div class="member-info">
+                <h5>{{utente.firstname}} {{utente.lastname}}</h5>
+                <h6 style="color: rgba(128, 128, 128, 0.688);">{{utente.email}}</h6>
+                <span style="color: black;">{{utente.age}} anni</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+
+</div>
+        </div>
+
+      </div>
+
+    </section><!-- /Team Section -->
+
+
+

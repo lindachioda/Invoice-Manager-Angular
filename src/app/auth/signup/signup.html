@@ -1,0 +1,77 @@
+<section id="contact" class="contact section">
+
+ <div class="container section-title pb-3" data-aos="fade-up">
+        <h2>Registrati</h2>
+        <p><span>Inserisci qui i tuoi</span> <span class="description-title"> Dati</span></p>
+      </div><!-- End Section Title -->
+
+       <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4 justify-content-center">
+
+          <div class="col-lg-8">
+            <form #signupForum="ngForm" (ngSubmit)="addUtente(signupForum)" action="forms/contact.php" method="post" class="php-email-form d-flex justify-content-between align-items-center" data-aos="fade-up" data-aos-delay="200">
+              <div class="row gy-4">
+
+                 <div class="col-md-6 form-group">
+                  <label for="firstname-field" class="pb-2">Nome</label>
+                  <input type="text" class="form-control rounded" name="firstname" id="firstname-field" ngModel required>
+                </div>
+
+                 <div class="col-md-6 form-group">
+                  <label for="lastname-field" class="pb-2">Cognome</label>
+                  <input type="text" class="form-control rounded" name="lastname" id="lastname-field" ngModel required>
+                </div>
+
+                <div class="col-md-4 form-group">
+                  <label for="age-field" class="pb-2">Età</label>
+                  <input type="number" class="form-control rounded" name="age" id="age-field" min="18" max="120" ngModel #age="ngModel" required>
+                </div>
+
+                <p *ngIf=" age.value < 18 && age.touched" [ngStyle]="{`color`: `red`}">Età minima: 18 anni</p>
+                <p *ngIf=" age.value > 120 && age.touched" [ngStyle]="{`color`: `red`}">Età massima: 120 anni</p>
+
+
+                <div class="col-md-4 form-group">
+                  <label for="roles-field" class="pb-2">Ruolo</label>
+                  <select class="form-control" name="roles" id="roles-field" ngModel required>
+                     <option value="" disabled selected>-</option>
+                    <option value="Admin">Admin</option>
+                    <option value="User">User</option>
+                  </select>
+                </div>
+
+                 <div class="col-md-6 form-group">
+                  <label for="email-field" class="pb-2">Email</label>
+                  <input type="email" class="form-control rounded" name="email" id="email-field" ngModel required>
+                </div>
+
+                <div class="col-md-6 form-group">
+                  <label for="password-field" class="pb-2">Password</label>
+                  <input type="password" class="form-control rounded" name="password" id="password-field" ngModel required>
+                </div>
+
+                <p *ngIf="!signupForum.valid && formInvalid" [ngStyle]="{`color`: `red`}"> Completa tutti i campi prima di terminare la sessione! </p>
+
+                <div class="col-md-12 text-center">
+                  <button type="submit">Registrati</button>
+                </div>
+
+                <p class="p-client-area col-md-12 text-center">Hai già un account?<a routerLink="/login" class="a-clien-tarea"> Accedi qui!</a></p>
+                
+
+              </div>
+
+              <div class="text-center">
+                 <img src="img/login/signup.jpg" class="img-fluid" style="max-width: 280px;" alt="Login">
+              </div>
+
+            </form>
+          </div><!-- End Contact Form -->
+
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->

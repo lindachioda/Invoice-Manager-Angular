@@ -1,0 +1,28 @@
+
+h1 {
+    font-size: 2em;
+    font-weight: 700;
+    margin-left: 20px;
+    margin-right: 50px;
+}
+
+.navbar-collapse {
+       margin-right: 20px;
+        justify-content: flex-end;
+}
+
+.navbar-nav {
+        margin-left: 20px;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #106eea;
+}
+
+.container-fluid {
+    margin-top: 5px;
+}
+
+.home {
+    color: #106eea!important;
+}

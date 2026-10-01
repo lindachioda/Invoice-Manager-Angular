@@ -1,0 +1,158 @@
+<section id="team" class="team section light-background">
+
+<!-- Section Title -->
+      <div class="container section-title pb-4 pt-4" data-aos="fade-up">
+        <h2>dettagli cliente</h2>
+      </div><!-- End Section Title -->
+
+<div class="container-all d-flex row justify-content-center">
+
+<div class="container-firs d-flex flex-column gap-5">
+
+<!--first table-->
+<div class="col-lg-5 colonna" *ngIf="clienti">
+    <h2 style="font-weight: 700;"><span style="color: #106eea;">Info</span> azienda</h2>
+    <table class="table table-bordered">
+  <thead>
+    <tr>   
+      <th scope="col">Regione Sociale:</th>
+      <td>{{clienti.ragioneSociale}}</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="col">P.IVA:</th>
+      <td>{{clienti.partitaIva}}</td>
+    </tr>
+    <tr>
+      <th scope="col">Email:</th>
+      <td>{{clienti.email}}</td>
+    </tr>
+    <tr>
+      <th scope="col">Pec:</th>
+      <td>{{clienti.pec}}</td>
+    </tr>
+    <tr>
+      <th scope="col">Telefono:</th>
+      <td>{{clienti.telefono}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<!--second table-->
+<div class="col-lg-5 colonna" *ngIf="clienti">
+    <h2 style="font-weight: 700;"><span style="color: #106eea;">Indirizzo</span> sede</h2>
+    <table class="table table-bordered">
+  <thead>
+    <tr>   
+      <th scope="col">Via:</th>
+      <td>{{clienti.indirizzoSede.via}}</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="col">Civico:</th>
+      <td>{{clienti.indirizzoSede.civico}}</td>
+    </tr>
+    <tr>
+      <th scope="col">CAP:</th>
+      <td>{{clienti.indirizzoSede.cap}}</td>
+    </tr>
+    <tr>
+      <th scope="col">Comune:</th>
+      <td>{{clienti.indirizzoSede.comune.nome}}</td>
+    </tr>
+    <tr>
+      <th scope="col">Provincia:</th>
+      <td>{{clienti.indirizzoSede.comune.provincia}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+</div>
+
+<div class="d-flex flex-column dx-group">
+    
+<!--dx table-->
+<div id="contact" class="contact section">
+    
+
+       <div class="containar" data-aos="fade-up" data-aos-delay="100">
+    
+        <div class="row gy-4 justify-content-center">
+        <h2 style="text-align: center; font-weight: 700; margin-top: 40px;">Lista <span style="color: #106eea;"> fatture</span></h2>
+        <div class="search-book d-flex justify-content-center">
+          <input type="text" class="form-control" style="width: 284px;" name="search" [(ngModel)]="search" autocomplete="off" placeholder="🔍 Cerca numero fattura...">
+      </div>
+<div *ngIf="fattureSearch.length > 0; else noFatture" class="d-flex justify-content-center flex-wrap gap-3">
+          <div class="col-lg-4 container-dx" *ngFor="let fattura of fattureSearch">
+            <form action="forms/contact.php" method="post" class="php-email-form d-flex justify-content-between" data-aos="fade-up" data-aos-delay="200">
+              <div class="d-flex flex-column gy-4">
+
+                <div>
+                    <p>Fattura Nr. {{fattura.numero}}</p>
+                    <div class="container-button d-flex row gap-3">
+                         <button (click)="infoFattura = fattura" type="button" class="info-b btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#clienteModal">Info</button>
+                         <button (click)="deleteInvoice(fattura.id)" type="submit" class="delate-b">Cancella</button>
+                    </div>
+                </div>
+
+              </div>
+
+            </form>
+          </div><!-- End Contact Form -->
+</div>
+          
+        </div>
+
+      </div>
+
+    </div><!-- /Contact Section -->
+
+</div>
+
+</div>
+
+</section>
+
+<!--MODAL-->
+<div class="modal fade" id="clienteModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Dettagli Cliente</h5>
+
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal">
+        </button>
+      </div>
+
+      <div class="modal-body" *ngIf="infoFattura">
+
+        <p><strong>Cliente:</strong> {{infoFattura.cliente}}</p>
+        <p><strong>Numero Fattura:</strong> {{infoFattura.numero}}</p>
+        <p><strong>Data:</strong> {{infoFattura.data}}</p>
+        <p><strong>Importo:</strong> {{infoFattura.importo}} €</p>
+        <p><strong>Stato:</strong> {{infoFattura.stato}}</p>
+
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary" (click)="changeStatus(infoFattura!)">Modifica Stato</button>
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<ng-template #noFatture>
+    <p class="no-fatture">Non ci sono fatture</p>
+</ng-template>

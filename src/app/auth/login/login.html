@@ -1,0 +1,49 @@
+  
+ <section id="contact" class="contact section">
+
+ <div class="container section-title pb-3" data-aos="fade-up">
+        <h2>Accedi</h2>
+        <p><span>Inserisci qui</span> <span class="description-title"> Email</span> e <span class="description-title"> Password</span></p>
+      </div><!-- End Section Title -->
+
+       <div class="container" data-aos="fade-up" data-aos-delay="100">
+    
+        <div class="row gy-4 justify-content-center">
+
+          <div class="col-lg-6">
+            <form #loginForm="ngForm" (ngSubmit)="onSubmitLogin(loginForm)" action="forms/contact.php" method="post" class="php-email-form d-flex justify-content-between" data-aos="fade-up" data-aos-delay="200">
+              <div class="d-flex flex-column gy-4">
+
+                 <div class="col-md-12 mb-4">
+                  <label for="email-field" class="pb-2">Email</label>
+                  <input type="email" class="form-control rounded" name="email" id="email-field" ngModel required>
+                </div>
+
+                <div class="col-md-12 mb-4">
+                  <label for="password-field" class="pb-2">Password</label>
+                  <input type="password" name="password" id="password-field" class="form-control rounded" ngModel required>
+                </div>
+
+                <p *ngIf="error" [ngStyle]="{`color`: `red`}">{{error}}</p>  
+
+                <div class="col-md-12 text-center">
+                  <button type="submit">Accedi</button>
+                </div>
+
+                <p class="p-client-area">Non hai ancora un account? <a routerLink="/signup" class="a-clien-tarea"> Registrati qui!</a></p>
+
+              </div>
+
+              <div class="text-center">
+                <img src="img/login/log.jpg" class="img-fluid" style="max-width: 250px;" alt="Login">
+              </div>
+
+            </form>
+          </div><!-- End Contact Form -->
+
+          
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->

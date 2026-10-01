@@ -1,0 +1,187 @@
+{
+  "users": [
+    {
+      "email": "admin@admin.com",
+      "password": "admin",
+      "firstname": "Giova",
+      "lastname": "Notti",
+      "age": 35,
+      "roles": "Admin",
+      "id": 1
+    },
+    {
+      "email": "user@user.com",
+      "password": "user",
+      "firstname": "Sailor",
+      "lastname": "Moon",
+      "age": 26,
+      "roles": "User",
+      "id": 2
+    },
+    {
+      "firstname": "Linda",
+      "lastname": "Io",
+      "age": 27,
+      "roles": "Admin",
+      "email": "linda@io.com",
+      "password": "linda",
+      "id": 4
+    }
+  ],
+  "customers": [
+    {
+      "id": 1,
+      "ragioneSociale": "Rosso-Sasso SRL",
+      "partitaIva": "00476410010",
+      "tipoCliente": "SRL",
+      "email": "rossosasso@gmail.com",
+      "pec": "rossosasso@gmail.com",
+      "telefono": "+39 558 92 35 2415",
+      "nomeContatto": "Rosso",
+      "cognomeContatto": "Sasso",
+      "telefonoContatto": "345 094 2749",
+      "emailContatto": "sailor.sasso@hotmail.com",
+      "indirizzoSede": {
+        "via": "Via NewYork, Piano 3",
+        "civico": "473",
+        "cap": "12345",
+        "comune": {
+          "nome": "NOME A CASO",
+          "provincia": "BG"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "ragioneSociale": "Gastronomo SPA",
+      "partitaIva": "50476419080",
+      "tipoCliente": "SPA",
+      "email": "gastronomo@gmail.com",
+      "pec": "gastronomo@gmail.com",
+      "telefono": "+39 678 82 39 2015",
+      "nomeContatto": "Solo",
+      "cognomeContatto": "Sara",
+      "telefonoContatto": "355 245 5471",
+      "emailContatto": "solo.sara@hotmail.com",
+      "indirizzoSede": {
+        "via": "Via Corso",
+        "civico": "8",
+        "cap": "12345",
+        "comune": {
+          "nome": "NOME DI PAESE",
+          "provincia": "TO"
+        }
+      }
+    },
+    {
+      "id": 3,
+      "ragioneSociale": "Azienda SRL",
+      "partitaIva": "02415480210",
+      "tipoCliente": "SRL",
+      "email": "azienda@gmail.com",
+      "pec": "azienda@gmail.com",
+      "telefono": "+39 093 34 99 9450",
+      "nomeContatto": "Laura",
+      "cognomeContatto": "Rossi",
+      "telefonoContatto": "334 123 6503",
+      "emailContatto": "laura.laura@gmail.com",
+      "indirizzoSede": {
+        "via": "Piazza Centrale 45",
+        "civico": "45",
+        "cap": "12345",
+        "comune": {
+          "nome": "paese",
+          "provincia": "RM"
+        }
+      }
+    },
+    {
+      "id": 4,
+      "ragioneSociale": "Il Gruppo SNC",
+      "partitaIva": "01376438850",
+      "tipoCliente": "SNC",
+      "email": "gruppetto@gmail.com",
+      "pec": "gruppetto@gmail.com",
+      "telefono": "+39 456 23 32 01945",
+      "nomeContatto": "I",
+      "cognomeContatto": "Pooh",
+      "telefonoContatto": "341 035 1829",
+      "emailContatto": "il.gruppetto@icloud.com",
+      "indirizzoSede": {
+        "via": "Via Gru, Piano 2",
+        "civico": "54",
+        "cap": "12345",
+        "comune": {
+          "nome": "paesello",
+          "provincia": "CA"
+        }
+      }
+    }
+  ],
+  "invoices": [
+    {
+      "numero": 1,
+      "importo": 300,
+      "data": "2026-18-11",
+      "stato": "NON PAGATA",
+      "cliente": "Rosso-Sasso SRL",
+      "id": 1
+    },
+    {
+      "numero": 4,
+      "importo": 220,
+      "data": "2020-11-18",
+      "stato": "PAGATA",
+      "cliente": "Il Gruppo SNC",
+      "id": 4
+    },
+    {
+      "cliente": "Gastronomo SPA",
+      "numero": 2,
+      "data": "2026-07-30",
+      "importo": "340",
+      "stato": "PAGATA",
+      "id": 5
+    },
+    {
+      "cliente": "Gastronomo SPA",
+      "numero": 4,
+      "data": "2026-08-08",
+      "importo": "340",
+      "stato": "PAGATA",
+      "id": 6
+    },
+    {
+      "cliente": "Rosso-Sasso SRL",
+      "numero": 5,
+      "data": "2026-08-08",
+      "importo": "67",
+      "stato": "PAGATA",
+      "id": 7
+    },
+    {
+      "cliente": "Il Gruppo SNC",
+      "numero": 9,
+      "data": "2026-06-12",
+      "importo": "89",
+      "stato": "PAGATA",
+      "id": 8
+    },
+    {
+      "cliente": "Gastronomo SPA",
+      "numero": 11,
+      "data": "2026-07-11",
+      "importo": "239",
+      "stato": "NON PAGATA",
+      "id": 9
+    },
+    {
+      "cliente": "Il Gruppo SNC",
+      "numero": 8,
+      "data": "2026-08-01",
+      "importo": "123",
+      "stato": "NON PAGATA",
+      "id": 10
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+
+ <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title pb-3" data-aos="fade-up">
+        <h2>Fatture</h2>
+        <p><span>Inserisci qui i dati della</span> <span class="description-title"> Fattura</span></p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4 justify-content-center align-items-center">
+            
+
+          <div class="col-lg-8">
+            <form #invoicesForm="ngForm" (ngSubmit)="addFattura(invoicesForm)"  class="php-email-form d-flex align-items-center" data-aos="fade-up" data-aos-delay="200">
+              <div class="row gy-4">
+
+                <div class="col-md-5 form-group">
+                  <label for="cliente-field" class="pb-2">Cliente</label>
+                  <select class="form-control" name="cliente" id="cliente-field" ngModel required>
+                    <option value="" disabled selected>-</option>
+                    <option *ngFor="let customer of customers" [value]="customer.ragioneSociale">{{customer.nomeContatto}} {{customer.cognomeContatto}}</option>
+                  
+                </select>
+                </div>
+
+                <div class="col-md-5 form-group">
+                    <label for="numero-field" class="pb-2">Numero Fattura</label>
+                    <input type="number" name="numero" id="numero-field" class="form-control" min="0"  max="100" step="1" ngModel required>
+                </div>
+
+                <div class="col-md-4 form-group">
+                  <label for="data-field" class="pb-2">Data Inserimento</label>
+                  <input type="date" name="data" id="data-field" class="form-control" ngModel required>
+                </div>
+
+                <div class="col-md-4 form-group">
+                  <label for="importo-field" class="pb-2">Importo</label>
+                  <input type="text" name="importo" class="form-control rounded" id="importo-field" placeholder="Importo in Euro" ngModel required>
+                </div>
+
+                <div class="col-md-10 form-group">
+                  <label for="stato-field" class="pb-2">Stato</label>
+                  <select class="form-control" name="stato" id="stato-field" placeholder="Importo in Euro" ngModel required>
+                    <option value="" disabled selected>-</option>
+                    <option value="PAGATA">PAGATA</option>
+                    <option value="NON PAGATA">NON PAGATA</option>
+                </select>
+                </div>
+
+                <p *ngIf="!invoicesForm.valid && formInvalid" [ngStyle]="{`color`: `red`}"> Completa tutti i campi prima di terminare la sessione! </p>
+
+                <div class="col-md-12 text-center">
+                  <button type="submit">Add</button>
+                </div>
+
+                <p class="p-client-area">Accedi all' <a routerLink="/clienti" class="a-clien-tarea">Area Clienti</a> per visionare tutte le fatture</p>
+              </div>
+
+              <div class="text-center">
+                 <img src="img/login/invoice.jpg" class="img-fluid" style="max-width: 300px;" alt="Login">
+              </div>
+
+            </form>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+
