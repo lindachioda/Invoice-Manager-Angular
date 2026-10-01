@@ -3,8 +3,9 @@ import { Injectable } from '@angular/core';
 import { Utenti } from '../interfaces/utenti';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';
 
-let APIusers = 'http://localhost:3000/users'
+
 
 @Injectable({
   providedIn: 'root',
@@ -13,16 +14,17 @@ export class AuthService {
 
   utenti: Utenti[] = []
   private isLogin = false
+  private APIusers = `${environment.apiUrl}/users`
 
    constructor(private http:HttpClient, private router:Router){}
 
   getUsers():Observable<Utenti[]>{
-      return this.http.get<Utenti[]>(APIusers)
+      return this.http.get<Utenti[]>(this.APIusers)
     }
 
   //aggiungi utente
   addUsers(utente:Utenti):Observable<Utenti>{
-    return this.http.post<Utenti>(APIusers, utente)
+    return this.http.post<Utenti>(this.APIusers, utente)
   }
 
   isLoggedIn(): boolean {

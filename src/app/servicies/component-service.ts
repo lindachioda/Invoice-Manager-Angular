@@ -6,10 +6,9 @@ import { Utenti } from '../interfaces/utenti';
 import { Invoices } from '../interfaces/invoices';
 import { IndirizzoSede } from '../interfaces/indirizzo-sede';
 import { Comune } from '../interfaces/comune';
-import { NgForm } from '@angular/forms';
+import { environment } from '../../environments/environment';
 
-let APIcustomers = 'http://localhost:3000/customers'
-let APIinvoices = 'http://localhost:3000/invoices'
+
 @Injectable({
   providedIn: 'root',
 })
@@ -20,15 +19,18 @@ export class ComponentService{
   fatture: Invoices[] = []
   indirizzi: IndirizzoSede[] = []
   comuni: Comune [] = []
+  private APIcustomers = `${environment.apiUrl}/customers`
+  private APIinvoices = `${environment.apiUrl}/invoices`
+
 
   constructor(private http:HttpClient){}
 
   getClients():Observable<Customers[]>{
-   return this.http.get<Customers[]>(APIcustomers)
+   return this.http.get<Customers[]>(this.APIcustomers)
   }
 
   getInvoices():Observable<Invoices[]>{
-    return this.http.get<Invoices[]>(APIinvoices)
+    return this.http.get<Invoices[]>(this.APIinvoices)
   }
 
   deleteInvoice(id: number):Observable<Invoices>{
@@ -37,7 +39,7 @@ export class ComponentService{
 
   //passare direttamente l'invoice
   addInvoice(invoice:Invoices):Observable<Invoices>{
-    return this.http.post<Invoices>(APIinvoices, invoice)
+    return this.http.post<Invoices>(this.APIinvoices, invoice)
   }
 
   //modifica stato pagamento
