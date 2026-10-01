@@ -1,5 +1,5 @@
 
 export const environment = {
   production: true,
-  apiUrl: 'https://TUO-BACKEND.onrender.com'
+  apiUrl: 'https://invoice-manager-angular.onrender.com'
 }
