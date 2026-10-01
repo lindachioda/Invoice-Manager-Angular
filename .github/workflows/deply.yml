@@ -36,7 +36,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist/invoiceapp/browser
+          path: ./dist/invoicesapp/browser
 
   deploy:
     environment:
