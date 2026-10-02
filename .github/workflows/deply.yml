@@ -28,7 +28,7 @@ jobs:
         run: npm ci
 
       - name: Build Angular
-        run: npm run build -- --base-href=/Invoice-Manager-Angular/
+        run: npm run build -- --base-href=/Invoices-Manager-Angular/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
