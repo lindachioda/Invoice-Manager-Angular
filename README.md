@@ -1,6 +1,6 @@
 
 🌐 **Live Demo** <br>
-✨ [Clicca qui per vedere il mio Progetto online!](https://lindachioda.github.io/Invoice-Manager-Angular/)
+✨ [Clicca qui per vedere il mio Progetto online!](https://lindachioda.github.io/Invoices-Manager-Angular/)
 
 ### 🛠️ Tecnologie Utilizzate
 
